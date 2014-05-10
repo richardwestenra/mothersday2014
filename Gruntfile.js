@@ -363,6 +363,24 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+        /* jshint camelcase:false */
+        ftp_push: {
+            your_target: {
+                options: {
+                    authKey: 'rw',
+                    host: 'ftp.richardwestenra.com',
+                    // port: 21,
+                    dest: '/home/stringman5/mothersday2014.richardwestenra.com/'
+                },
+                files: [ // Enable Dynamic Expansion, Src matches are relative to this path, Actual Pattern(s) to match
+                    {
+                        expand: true,
+                        // cwd: 'test',
+                        src: ['<%= config.dist %>','<%= config.dist %>/**/*']
+                    }
+                ]
+            }
         }
     });
 
@@ -414,6 +432,11 @@ module.exports = function (grunt) {
         'rev',
         'usemin',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'default',
+        'ftp_push'
     ]);
 
     grunt.registerTask('default', [
