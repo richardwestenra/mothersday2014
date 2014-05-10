@@ -371,7 +371,7 @@ module.exports = function (grunt) {
                     authKey: 'rw',
                     host: 'ftp.richardwestenra.com',
                     // port: 21,
-                    dest: '/home/stringman5/mothersday2014.richardwestenra.com/'
+                    dest: 'mothersday2014.richardwestenra.com/'
                 },
                 files: [ // Enable Dynamic Expansion, Src matches are relative to this path, Actual Pattern(s) to match
                     {
